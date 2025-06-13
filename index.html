@@ -2,112 +2,270 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Amritha Mandagondi | Designing for Equity & Impact</title>
+  <title>Amritha Mandagondi | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f6fb; color: #222; }
-    header { background: #2d5be3; color: #fff; padding: 32px 0 18px 0; text-align: center; }
-    nav { margin: 16px 0; }
-    nav a { color: #fff; text-decoration: none; margin: 0 14px; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    main { max-width: 820px; margin: 32px auto; background: #fff; padding: 36px; border-radius: 12px; box-shadow: 0 2px 24px rgba(0,0,0,0.10);}
-    section { margin-bottom: 44px; }
-    h1 { margin-top: 0; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 18px; }
-    .gallery img { width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);}
-    .testimonials blockquote { background: #f0f4ff; border-left: 4px solid #2d5be3; margin: 0 0 20px 0; padding: 14px 18px; border-radius: 6px; font-style: italic; }
-    .projects ul { list-style: disc inside; padding-left: 0; }
-    .projects li { margin-bottom: 10px; }
-    .blog-links a { display: block; margin-bottom: 8px; color: #2d5be3; text-decoration: none; }
+    :root {
+      --main-blue: #2563eb;
+      --accent-yellow: #ffe066;
+      --soft-white: #fafdff;
+      --text-main: #222;
+      --text-muted: #555;
+      --gallery-bg: #e9f2fb;
+    }
+    body {
+      margin: 0;
+      background: var(--soft-white);
+      font-family: 'Verdana', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text-main);
+      font-size: 17px;
+    }
+    header {
+      background: linear-gradient(90deg, var(--main-blue) 70%, var(--accent-yellow) 100%);
+      color: #fff;
+      padding: 36px 0 20px 0;
+      text-align: center;
+    }
+    nav {
+      margin: 18px 0 0 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 16px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background: rgba(255, 224, 102, 0.2);
+    }
+    main {
+      max-width: 900px;
+      margin: 36px auto;
+      background: #fff;
+      padding: 38px 30px 34px 30px;
+      border-radius: 16px;
+      box-shadow: 0 2px 32px rgba(31, 60, 151, 0.08);
+    }
+    h1, h2 { margin-top: 0; }
+    h2 {
+      color: var(--main-blue);
+      margin-bottom: 14px;
+      margin-top: 38px;
+    }
+    .bio-card {
+      background: var(--gallery-bg);
+      border-left: 7px solid var(--main-blue);
+      padding: 24px 24px 16px 24px;
+      border-radius: 10px;
+      font-size: 1.15em;
+      margin-bottom: 26px;
+    }
+    .bio-card em { color: var(--main-blue); font-style: normal;}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 18px;
+      background: var(--gallery-bg);
+      padding: 22px 14px;
+      border-radius: 12px;
+    }
+    .gallery-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(31,60,151,0.07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .gallery-item img {
+      width: 100%;
+      max-width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      background: #e5e9f0;
+    }
+    .caption {
+      font-size: 0.99em;
+      color: var(--main-blue);
+      background: var(--accent-yellow);
+      width: 100%;
+      text-align: center;
+      padding: 8px 10px 8px 10px;
+      margin-top: 0;
+    }
+    .journey {
+      background: #f5faff;
+      border-left: 4px solid var(--main-blue);
+      padding: 18px 22px;
+      border-radius: 9px;
+      margin-bottom: 30px;
+    }
+    .journey .chapter { margin-bottom: 15px; }
+    .journey strong { color: var(--main-blue); }
+    ul.project-list {
+      padding-left: 18px;
+      margin: 0;
+    }
+    ul.project-list li {
+      margin-bottom: 12px;
+    }
+    .projects a {
+      color: var(--main-blue);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .blog-links a {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--main-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
     .blog-links a:hover { text-decoration: underline; }
-    @media (max-width: 600px) {
-      main { padding: 10px; }
+    .contact {
+      background: var(--main-blue);
+      color: #fff;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-top: 34px;
+      font-size: 1.10em;
+      text-align: center;
+      line-height: 1.6;
+      box-shadow: 0 2px 12px rgba(31,60,151,0.08);
+    }
+    .contact a {
+      color: var(--accent-yellow);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 8px;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      color: #aaa;
+      margin: 34px 0 0 0;
+      font-size: 0.98em;
+    }
+    @media (max-width: 700px) {
+      main { padding: 8px 2px; }
+      .gallery { grid-template-columns: 1fr; padding: 10px 2px;}
+      .bio-card, .journey { padding: 12px 8px; }
+      h2 { margin-top: 30px; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Amritha Mandagondi</h1>
-    <p>
-I build high-impact programs and partnerships at the intersection of corporate social responsibility, workforce equity, and strategic communications.
-With a systems-thinking mindset and deep on-the-ground experience, I help mission-driven teams turn bold ideas into scalable action—through effective program design, executive storytelling, and inclusive collaboration. My work spans continents, communities, and contexts—but is always guided by the same core question:
-💡 How do we build systems that truly serve the people they’re meant to?
-
-📍 My Journey in Social Impact: A Timeline of Building with Purpose
-🌱 Community-Rooted Beginnings
-South Asia — 2012–2014
-I began my career working alongside first-generation women entrepreneurs in rural South Asia—supporting them to launch small-scale businesses rooted in hand-block printing, turmeric, and natural goods. I helped them make the leap from production to entrepreneurship, navigating new digital marketplaces and carving economic independence in traditionally informal economies.
-
-📚 From Grassroots to the Classroom
-Southeast Asia — 2015–2017
-Eager to work directly with young learners, I stepped into public school classrooms to teach English, math, and entrepreneurship to middle schoolers in under-resourced communities. These were students on the brink of dropping out—and together, we reimagined education as a platform for self-determined futures, not just test scores.
-
-💼 Building Workforce Equity for Marginalized Youth
-Asia + Global — 2017–2019
-I then led skills training and career readiness initiatives for youth with disabilities and early school leavers—designing inclusive programs that helped them access dignified jobs at companies like PepsiCo. These partnerships weren’t just about job placement; they were about shifting how systems viewed talent, potential, and inclusion.
-
-🎮 Scaling Learning Through Technology
-Silicon Valley — 2019–2021
-At edtech startups in Silicon Valley, I translated my classroom insights into product strategy—designing gamified tools that made learning more human, engaging, and scalable. I championed learner voice and equity in every layer of the user experience, making educational technology work better for those most often left behind.
-
-🛠️ Leading Refugee Workforce Innovation
-Bay Area — 2021–2023
-At the International Rescue Committee, I led economic mobility programs for refugee families from Afghanistan, Ukraine, Iran, El Salvador, and beyond. I designed cross-sector partnerships and ecosystem strategies that transformed fragmented services into coordinated, long-term pathways toward self-sufficiency.
-
-🌍 Strategic Program Design for Global Equity
-Remote / Global — 2023–Present
-Now at Wevise, I lead strategy and partnerships for workforce equity pilots—building inclusive learning systems, supporting underrepresented technologists, and collaborating with global teams to design programs grounded in impact, insight, and integrity.
-
-✨ Across every chapter, I’ve worked at the intersection of people and possibility—bridging systems and stories, values and action, urgency and equity.
-
-💬 Open to consulting engagements, collaborations, and bold social impact projects where strategy meets purpose.
-
-</p>
+    <p style="font-size:1.08em; margin: 10px 0 0 0;">Building high-impact programs & partnerships at the intersection of <b>social responsibility, workforce equity, and storytelling.</b></p>
     <nav>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#projects">https://daisy-lunch-351.notion.site/Case-Study-873c54ed8fa3454083849b6624eea65e?pvs=143</a>
+      <a href="#about">Bio</a>
+      <a href="#journey">Journey</a>
       <a href="#gallery">Gallery</a>
+      <a href="#projects">Projects</a>
       <a href="#blog">Blog</a>
-      <a href="https://www.linkedin.com/in/amrithamandagondi/" target="_blank">LinkedIn</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
   <main>
-    <section id="testimonials" class="testimonials">
-      <h2>Testimonials</h2>
-      <blockquote>
-        "Whaleuniv1991 is a highly motivated and talented developer! - Jane Doe"
-      </blockquote>
-      <blockquote>
-        "An excellent team player and problem solver. Highly recommended. - John Smith"
-      </blockquote>
-      <!-- Add more testimonials here -->
+    <section id="about">
+      <h2>Bio</h2>
+      <div class="bio-card">
+        I build high-impact programs and partnerships at the intersection of corporate social responsibility, workforce equity, and strategic communications.<br><br>
+        With a systems-thinking mindset and deep on-the-ground experience, I help mission-driven teams turn bold ideas into scalable action—through effective program design, executive storytelling, and inclusive collaboration. My work spans continents, communities, and contexts—but is always guided by the same core question:<br>
+        <em>💡 How do we build systems that truly serve the people they’re meant to?</em><br><br>
+        Open to consulting engagements, collaborations, and bold social impact projects where strategy meets purpose.
+      </div>
+    </section>
+    <section id="journey">
+      <h2>My Journey in Social Impact</h2>
+      <div class="journey">
+        <div class="chapter">
+          <strong>🌱 Community-Rooted Beginnings<br>South Asia — 2012–2014</strong><br>
+          I began my career working alongside first-generation women entrepreneurs in rural South Asia—supporting them to launch small-scale businesses rooted in hand-block printing, turmeric, and natural goods. I helped them make the leap from production to entrepreneurship, navigating new digital marketplaces and carving economic independence in traditionally informal economies.
+        </div>
+        <div class="chapter">
+          <strong>📚 From Grassroots to the Classroom<br>Southeast Asia — 2015–2017</strong><br>
+          Eager to work directly with young learners, I stepped into public school classrooms to teach English, math, and entrepreneurship to middle schoolers in under-resourced communities. These were students on the brink of dropping out—and together, we reimagined education as a platform for self-determined futures, not just test scores.
+        </div>
+        <div class="chapter">
+          <strong>💼 Building Workforce Equity for Marginalized Youth<br>Asia + Global — 2017–2019</strong><br>
+          I then led skills training and career readiness initiatives for youth with disabilities and early school leavers—designing inclusive programs that helped them access dignified jobs at companies like PepsiCo. These partnerships weren’t just about job placement; they were about shifting how systems viewed talent, potential, and inclusion.
+        </div>
+        <div class="chapter">
+          <strong>🎮 Scaling Learning Through Technology<br>Silicon Valley — 2019–2021</strong><br>
+          At edtech startups in Silicon Valley, I translated my classroom insights into product strategy—designing gamified tools that made learning more human, engaging, and scalable. I championed learner voice and equity in every layer of the user experience, making educational technology work better for those most often left behind.
+        </div>
+        <div class="chapter">
+          <strong>🛠️ Leading Refugee Workforce Innovation<br>Bay Area — 2021–2023</strong><br>
+          At the International Rescue Committee, I led economic mobility programs for refugee families from Afghanistan, Ukraine, Iran, El Salvador, and beyond. I designed cross-sector partnerships and ecosystem strategies that transformed fragmented services into coordinated, long-term pathways toward self-sufficiency.
+        </div>
+        <div class="chapter">
+          <strong>🌍 Strategic Program Design for Global Equity<br>Remote / Global — 2023–Present</strong><br>
+          Now at Wevise, I lead strategy and partnerships for workforce equity pilots—building inclusive learning systems, supporting underrepresented technologists, and collaborating with global teams to design programs grounded in impact, insight, and integrity.
+        </div>
+        <div style="margin-top:10px;">
+          ✨ Across every chapter, I’ve worked at the intersection of people and possibility—bridging systems and stories, values and action, urgency and equity.
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="image2.png" alt="Portrait" />
+          <div class="caption">From public school classrooms to global nonprofits, I’ve carried the same question with me: how do we make opportunity more just, more human, more scalable?</div>
+        </div>
+        <div class="gallery-item">
+          <img src="image3.png" alt="Classroom wall art" />
+          <div class="caption">"I don’t just manage programs—I co-create pathways with the communities they’re meant to empower."</div>
+        </div>
+        <div class="gallery-item">
+          <img src="image4.png" alt="Presenting at event" />
+          <div class="caption">"Whether I’m building a partnership or writing a strategy, I start with people and end with measurable impact."</div>
+        </div>
+        <div class="gallery-item">
+          <img src="image5.png" alt="Workforce inclusion project" />
+          <div class="caption">Creating dignified opportunities for all: workforce inclusion in action.</div>
+        </div>
+      </div>
     </section>
     <section id="projects" class="projects">
       <h2>Projects</h2>
-      <ul>
+      <ul class="project-list">
         <li>
-          <strong>Project </strong> — At Youth4Jobs, I led a national initiative to build inclusive employment pathways for youth with disabilities across India. By co-creating regional skill centers, developing an employer engagement playbook, and influencing public policy, we trained 3,500+ youth and placed over 1,200 in formal jobs—proving that inclusive hiring is not only possible, but scalable. 
-          <a href="https://daisy-lunch-351.notion.site/20716d033348804f968bf0c39cb91be9" target="_blank">GitHub Repo</a>
+          <strong>Unlocking Employment Pathways for Youth with Disabilities</strong> — 
+          <a href="https://daisy-lunch-351.notion.site/Project-Unlocking-Employment-Pathways-for-Youth-with-Disabilities-20716d033348804f968bf0c39cb91be9" target="_blank">View Project</a>
         </li>
         <li>
-          <strong>Project B</strong> — Short description.
-          <a href="https://github.com/Whaleuniv1991/project-b" target="_blank">GitHub Repo</a>
+          <strong>Case Study</strong> — 
+          <a href="https://daisy-lunch-351.notion.site/Case-Study-873c54ed8fa3454083849b6624eea65e" target="_blank">Read Case Study</a>
         </li>
-        <!-- Add more projects here -->
       </ul>
-    </section>
-    <section id="gallery" class="gallery">
-      <h2>Gallery</h2>
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Sample 1">
-      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308" alt="Sample 2">
-      <!-- Add your own images here (can upload to repo and use ./image.jpg) -->
     </section>
     <section id="blog" class="blog-links">
       <h2>Blog / LinkedIn Articles</h2>
-      <a href="https://www.linkedin.com/pulse/why-csr-needs-more-grassroots-experience-amritha-mandagondi-2rrdc/?trackingId=AWV4lN2aRUO5BoU9EKQjEQ%3D%3D">Why CSR needs more grassroots experience</a>
-      <a href="https://www.linkedin.com/pulse/csr-charity-why-patient-capital-creates-resilient-amritha-mandagondi-v6s4c/?trackingId=AWV4lN2aRUO5BoU9EKQjEQ%3D%3D">Why Patient Capital creates Resilient Businesses X</a>
-      <a href="https://www.linkedin.com/pulse/breaking-barriers-urgent-need-womens-economic-amritha-mandagondi-spgdc/?trackingId=AWV4lN2aRUO5BoU9EKQjEQ%3D%3D">The Urgent Need for Women's Economic Empowerment X</a>
+      <a href="https://www.linkedin.com/pulse/why-csr-needs-more-grassroots-experience-amritha-mandagondi-2rrdc/?trackingId=AWV4lN2aRUO5BoU9EKQjEQ%3D%3D" target="_blank">Why CSR Needs More Grassroots Experience</a>
+      <a href="https://www.linkedin.com/pulse/csr-charity-why-patient-capital-creates-resilient-amritha-mandagondi-v6s4c/?trackingId=AWV4lN2aRUO5BoU9EKQjEQ%3D%3D" target="_blank">CSR ≠ Charity: Why Patient Capital Creates Resilient Impact</a>
+      <a href="https://www.linkedin.com/pulse/breaking-barriers-urgent-need-womens-economic-amritha-mandagondi-spgdc/?trackingId=AWV4lN2aRUO5BoU9EKQjEQ%3D%3D" target="_blank">Breaking Barriers: The Urgent Need for Women's Economic Empowerment</a>
     </section>
+    <section id="contact" class="contact">
+      🔹 <b>Open to Collaboration, Consulting & Conversations</b><br>
+      <a href="https://www.linkedin.com/in/amrithamandagondi/" target="_blank">LinkedIn</a> | 
+      <a href="mailto:amritha.mandagondi@gmail.com">amritha.mandagondi@gmail.com</a>
+    </section>
+    <footer>
+      &copy; 2025 Amritha Mandagondi
+    </footer>
   </main>
 </body>
 </html>
